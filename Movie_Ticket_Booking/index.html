@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/style.css">
+</head>
+<body>
+    <main class="app">
+        <header class="head">
+            <h1>Ticket Booking System</h1>
+            <p>Pick your seats. Closer to the screen costs more.</p>
+        </header>
+
+        <section class="stage" aria-label="Seat map">
+            <div class="screen"><span>Screen</span></div>
+            <div id="seatMap" class="seat-map" role="group" aria-label="Seats"></div>
+
+            <ul class="legend">
+                <li><i class="dot"></i>Available</li>
+                <li><i class="dot selected"></i>Selected</li>
+                <li><i class="dot booked"></i>Booked</li>
+            </ul>
+        </section>
+
+        <aside class="summary" aria-live="polite">
+            <h2>Your booking</h2>
+            <div id="chips" class="chips"></div>
+            <p id="empty" class="empty">No seats selected. Tap a seat to start.</p>
+
+            <dl class="totals">
+                <div><dt>Seats</dt><dd id="count">0</dd></div>
+                <div><dt>Total</dt><dd id="total">₹0</dd></div>
+            </dl>
+
+            <div class="buttons">
+                <button type="button" id="bookBtn" class="primary" disabled>Book seats</button>
+                <div class="row">
+                    <button type="button" id="cancelBtn" class="ghost">Clear selection</button>
+                    <button type="button" id="resetBtn" class="ghost danger">Reset all</button>
+                </div>
+            </div>
+            <p class="stat"><span id="bookedCount">0</span> of <span id="totalSeats">0</span> seats booked</p>
+        </aside>
+    </main>
+
+    <div id="toast" class="toast" role="status"></div>
+    <script src="./JS/script.js"></script>
+</body>
+</html>
